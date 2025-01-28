@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Game 1: Venn Diagram Challenge</title>
+        <link rel="stylesheet" href="./css/game2.css" />
+      </head>
+<body>
+    <div class="main-container">
+        <div class="theory-container">
+            <h1>What is a Subset?</h1>
+            <p>A subset is a set in which every element of the subset is also an element of another set, called the superset.</p>
+            <p><strong>Mathematically:</strong> If B is a subset of A, then: B ⊆ A</p>
+            <p>If B contains all elements of A, it is called an <strong>improper subset</strong>, otherwise, it is a <strong>proper subset</strong>.</p>
+            <h2>How to Play</h2>
+            <div class="how-to-play">
+                <ol>
+                    <li>Select the subsets from the 1-15 numbers displayed in the game.</li>
+                    <li>Each round, you need to find five valid subsets within the time limit.</li>
+                    <li>Earn 50 points for completing each round. The game ends after reaching 200 points!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <h2>Subset Finder Challenge
+
+                
+            </h2>
+            <p class="set">Set: <span id="set-display"></span></p>
+
+
+            <div class="checkboxes"></div>
+
+            <button id="submit">Submit</button>
+            
+            <p class="points">Points: <span id="points">0</span></p>
+            <p class="timer">Time Remaining: <span id="time">60 seconds</span> </p>
+
+            <!-- Subsets Found Area -->
+            <h3>Subsets Found:</h3>
+            <ul id="subsets-found-list"></ul>
+            <button id="end-game">End Game</button>
+            <script>
+            document.getElementById('end-game').addEventListener('click', function() {
+                window.location.href = 'index.html'; // Redirect to homepage
+            });
+        </script>
+            
+        </div>
+    </div>
+    <p id="feedback-message" style="color: red; font-weight: bold; display: none; margin-top: 10px;"></p>
+
+
+
+    <!-- Time Up Message -->
+<div id="time-up-message" class="dialog-box" style="display: none;">
+    <h3>Time is up! Round over</h3>
+    <button onclick="closeTimeUpMessage()">OK</button>
+</div>
+<div id="time-up-backdrop" class="backdrop" style="display: none;"></div>
+
+<!-- End Game Message -->
+<div id="end-game-message" class="dialog-box" style="display: none;">
+    <h3>Congratulations! You have reached 50 points. The game is over.</h3>
+    <button onclick="closeEndGameMessage()">OK</button>
+</div>
+<div id="end-game-backdrop" class="backdrop" style="display: none;"></div>
+
+
+    <script src="./js/game2.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game 1: Venn Diagram Challenge</title>
+    <link rel="stylesheet" href="./css/game1.css" />
+  </head>
+<body>
+  <div class="container theory-container">
+    <h2>What is Cartesian Product?</h2>
+    <p>The Cartesian product of two sets A and B, denoted as A × B, is the set of all possible ordered pairs (a, b) such that a is an element of A and b is an element of B.</p>
+    <p>For example, if:</p>
+    <p>A = {1, 2}, B = {x, y}, then:</p>
+    <p>A × B = {(1, x), (1, y), (2, x), (2, y)}</p>
+    <p>The Cartesian product is used in various fields such as mathematics, computer science, and logic.</p>
+    
+    <h3>How to Play:</h3>
+    <ul>
+      <li>Select one element from each of the two sets (A and B).</li>
+      <li>Form a pair (a, b) where 'a' is from set A and 'b' is from set B.</li>
+      <li>You have a limited amount of time to form five valid pairs. Earn points for each round you complete!</li>
+    </ul>
+  </div>
+
+  <div class="container game-container">
+    <h1>
+          Cartesian Product Game
+      
+    
+    
+    </h1>
+    
+    <div id="timer">Time Remaining: 60 seconds</div>
+    <div id="points">Points: 0</div>
+    
+    <h2>Choose a pair from the sets:</h2>
+    
+    <div id="choicesA"></div>
+    <div id="choicesB"></div>
+    
+    <button onclick="submitPair()">Submit</button>
+    <button id="endGameBtn">End Game</button>
+
+    <script>
+        document.getElementById('endGameBtn').addEventListener('click', function() {
+            // Redirecting to homepage
+            window.location.href = './index.html'; // Make sure to update the path if your homepage file is different
+        });
+    </script>
+    
+    <div id="result"></div>
+    
+    <div id="progress"></div>
+    <h2>Pairs Made:</h2>
+    <ul id="pairHistory"></ul>
+
+    <!-- Dialogue Box -->
+    <div id="dialogueBox">
+      <div id="dialogueContent">
+        <p id="dialogueMessage"></p>
+        <button onclick="closeDialogue()">OK</button>
+      </div>
+    </div>
+
+    <!-- Message display for round completion -->
+    <div id="message" class="message hidden"></div> <!-- Added div for message -->
+  </div>
+
+  <script src="./js/game1.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 90%;
+}
+
+.concept-container {
+    width: 40%;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    margin-right: 20px;
+    overflow-y: auto;
+}
+
+.concept-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #28a745;
+}
+
+.concept-content {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.start-timer-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.start-timer-btn:hover {
+    background-color: #0056b3;
+}
+
+.game-container {
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f8f9fa;
+}
+
+.timer {
+    font-size: 1.2rem;
+    color: #ffc107;
+    margin-top: 10px;
+}
+
+#end-game-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#end-game-button:hover {
+    background-color: #ff1f2e;
+}
+
+.set-display {
+    padding: 10px;
+    background-color: #282828;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.input-area button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.input-area button:hover {
+    background-color: #138496;
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #28a745;
+}
+
+.hidden {
+    display: none;
+}
+
+h3 {
+    color: #28a745;
+}

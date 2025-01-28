@@ -1,0 +1,224 @@
+/* Global Styles */
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background for body */
+    color: #f4f4f9; /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    flex-direction: row;
+    font-size: 20px;  /* Adjust font size if needed */
+    color: #FFFFFF;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+}
+
+.theory-container, .game-container {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #1e1e1e; /* Dark background for the containers */
+    border-radius: 8px;
+    margin-right: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.game-container {
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2 {
+    color: #28a745; /* Green headings */
+    font-size: 32px; /* Define font size for headings */
+     /* Make the headings bold */
+}
+
+.info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.challenge {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #28a745; /* Green border */
+    border-radius: 8px;
+}
+
+.set {
+    font-size: 20px;
+    font-weight: bold;
+    color: #28a745; /* Green text for set */
+}
+
+.checkboxes {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #28a745; /* Green text */
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    background: #3498db; /* Blue background for Submit button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: auto; /* Prevent the button from occupying full width */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Submit button */
+button:hover {
+    background-color: #1E90FF; /* Darker blue on hover */
+}
+
+#end-game-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for End Game button */
+#end-game:hover {
+    background-color: #b30000; /* Darker red on hover */
+}
+
+/* Align buttons (Submit and End Game) to the right */
+.buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px;
+}
+
+/* Ensure that buttons don't stretch across the entire width */
+.buttons-container button {
+    margin-left: 10px; /* Add spacing between the buttons */
+}
+
+.points {
+    font-size: 20px;
+    color: #28a745; /* Green for points */
+}
+
+.subsets-found {
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex; /* Set to flexbox to align items horizontally */
+    flex-wrap: wrap; /* Allows wrapping of items to the next line */
+    gap: 10px; /* Add space between each subset */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list bullets */
+}
+
+.subsets-found li {
+    background: #1b1b1b; /* Dark background for list items */
+    color: #00FF00; /* Green text color */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #00FF00; /* Green border */
+    display: inline-flex; /* Forces elements to be inline but still maintain flex properties */
+    justify-content: center; /* Center content inside each li */
+    align-items: center; /* Vertically center content */
+    width: auto; /* Automatically adjust width based on content */
+}
+
+.timer {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ffc107; /* Green timer */
+}
+
+/* Styles for the dialog box */
+.dialog-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333; /* Dark background for the dialog */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+    text-align: center;
+    display: none;
+}
+
+.dialog-box h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #00FF00; /* Green text in dialog */
+}
+
+.dialog-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #00FF00; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dialog-box button:hover {
+    background: #32CD32; /* Lighter green on hover */
+}
+
+/* Backdrop for the dialog box */
+.dialog-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: center; /* Vertically center the elements */
+    width: 100%; /* Make sure it takes full width */
+    margin-bottom: 20px; /* Optional: Space between header and other content */
+}
+.message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.warning {
+    background-color: yellow;
+    color: black;
+}
+.error {
+    background-color: red;
+    color: white;
+}

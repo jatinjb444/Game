@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Game 1: Venn Diagram Challenge</title>
+        <link rel="stylesheet" href="./css/game3.css" />
+      </head>
+<body>
+    <div class="container">
+        <!-- Conceptual Page -->
+        <div class="concept-container">
+            <header>
+                <h1>Set Operations Guide</h1>
+            </header>
+            <div class="concept-content">
+                <p><strong>Set Difference (A - B):</strong> Elements in A that are not in B.</p>
+                <p><strong>Set Intersection (A ∩ B):</strong> Common elements between A and B.</p>
+                <p><strong>Set Union (A ∪ B):</strong> All elements from both sets, without duplicates.</p>
+                <h3>Steps to Solve the Game:</h3>
+                <ol>
+                    <li>Find the difference between the encrypted set and the removed set.</li>
+                    <li>Compare the resulting set with the known components using intersection.</li>
+                    <li>Combine the validated set with hidden symbols using union.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Game Section -->
+        <div class="game-container" id="game-container">
+            <header>
+                <h1>Set Cipher</h1>
+                
+                <div class="timer">Time: <span id="time">30</span>s</div>
+                <button id="end-game-button" onclick="endGame()">End Game</button>
+            </header>
+            <script>
+                // Redirect to homepage when 'End Game' button is clicked
+                document.getElementById('end-game-button').addEventListener('click', function() {
+                    window.location.href = 'index.html'; // Redirect to homepage (index.html)
+                });
+            </script>
+
+            <div class="case-info">
+                <h2>Case: Unlocking the Formula</h2>
+                <div class="universal-set">
+                    <h3>Universal Set (U)</h3>
+                    <div class="set-display" id="universal-set">
+                        A B C D E F G H I J K L M N O P Q R S T
+                    </div>
+                </div>
+            </div>
+
+            <div class="puzzle-container">
+                <!-- Puzzle 1 -->
+                <div class="puzzle" id="puzzle1">
+                    <h3>Puzzle 1: Isolate the Relevant Components</h3>
+                    <p class="instructions">Identify the elements from the encrypted message that were not removed.</p>
+                    
+                    <div class="sets">
+                        <div class="set">
+                            <label>Encrypted Set (E):</label>
+                            <div class="set-display" id="encrypted-set">
+                                A B C E G J K M N P Q S
+                            </div>
+                        </div>
+                        <div class="set">
+                            <label>Removed Set (H):</label>
+                            <div class="set-display" id="removed-set">
+                                B C J K Q
+                            </div>
+                        </div>
+                        <div class="set">
+                            <label>Relevant Set (R):</label>
+                            <input type="text" id="relevant-set-input" placeholder="Enter Relevant Set (R)...">
+                        </div>
+                    </div>
+
+                    <div class="input-area">
+                        <button onclick="checkPuzzle(1)">Submit</button>
+                        <button onclick="showHint(1)">Hint</button>
+                    </div>
+
+                    <div class="hint" id="hint1" style="display:none;">
+                        <p><strong>Hint:</strong> Perform the set difference operation: E - H</p>
+                    </div>
+
+                    <div class="message" id="message1" style="display:none;"></div>
+                </div>
+
+                <!-- Puzzle 2 -->
+                <div class="puzzle hidden" id="puzzle2">
+                    <h3>Puzzle 2: Validate with Known Data</h3>
+                    <p class="instructions">Check your remaining components against the known components of the formula.</p>
+
+                    <div class="sets">
+                        <div class="set">
+                            <label>Known Components (N):</label>
+                            <div class="set-display" id="known-set">
+                                A G L M S T U
+                            </div>
+                        </div>
+                        <div class="set">
+                            <label>Relevant Set (R):</label>
+                            <div class="set-display" id="puzzle2-relevant-set"></div>
+                        </div>
+                        <div class="set">
+                            <label>Validated Set (V):</label>
+                            <input type="text" id="validated-set-input" placeholder="Enter Validated Set (V)...">
+                        </div>
+                    </div>
+
+                    <div class="input-area">
+                        <button onclick="checkPuzzle(2)">Submit</button>
+                        <button onclick="showHint(2)">Hint</button>
+                    </div>
+
+                    <div class="hint" id="hint2" style="display:none;">
+                        <p><strong>Hint:</strong> Perform the set intersection operation: R ∩ N</p>
+                    </div>
+
+                    <div class="message" id="message2" style="display:none;"></div>
+                </div>
+
+                <!-- Puzzle 3 -->
+                <div class="puzzle hidden" id="puzzle3">
+                    <h3>Puzzle 3: Finalize the Formula</h3>
+                    <p class="instructions">Combine the validated components with additional hidden symbols.</p>
+
+                    <div class="sets">
+                        <div class="set">
+                            <label>Hidden Symbols (Hid):</label>
+                            <div class="set-display" id="hidden-set">
+                                X Y Z
+                            </div>
+                        </div>
+                        <div class="set">
+                            <label>Validated Set (V):</label>
+                            <div class="set-display" id="puzzle3-validated-set"></div>
+                        </div>
+                        <div class="set">
+                            <label>Final Set (F):</label>
+                            <input type="text" id="final-set-input" placeholder="Enter Final Set (F)...">
+                        </div>
+                    </div>
+
+                    <div class="input-area">
+                        <button onclick="checkPuzzle(3)">Submit</button>
+                        <button onclick="showHint(3)">Hint</button>
+                    </div>
+
+                    <div class="hint" id="hint3" style="display:none;">
+                        <p><strong>Hint:</strong> Perform the set union operation: V ∪ Hid</p>
+                    </div>
+
+                    <div class="message" id="message3" style="display:none;"></div>
+                </div>
+                <div id="final-message" class="hidden">
+                    <h2>Congratulations! You've unlocked the formula! 🎉</h2>
+                </div>
+                <div id="timer-expired-message" class="hidden">
+                    <h2>Time's up! Restart the timer or try again.</h2>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="./js/game3.js"></script>
+</body>
+</html>
